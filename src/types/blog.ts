@@ -7,5 +7,5 @@ export type BlogResponse = ContentResonse<{
   title?: string;
   image?: string;
   content?: string;
-  tag?: TagResponse[];
+  tags?: TagResponse[];
 }>;
