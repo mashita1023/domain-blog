@@ -1,3 +1,5 @@
+export {}
+
 module.exports = {
   roots: ["<rootDir>"],
   moduleFileExtensions: ["ts", "tsx", "js", "json", "jsx"],

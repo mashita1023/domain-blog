@@ -50,7 +50,7 @@ const Page: NextPage<PageProps> = (props) => {
               <li>
                 tag:
                 <ul>
-                  {blog.tags.map((tag) => (
+                  {blog.tags.map(({tag}: {tag: any}) => (
                     <li key={tag.id}>
                       <Link href={`/tags/${tag.id}`}>{tag.name}</Link>
                     </li>
@@ -75,7 +75,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
+export const getStaticProps = async (context) => {
   const { params, previewData } = context;
 
   if (!params?.id) {
@@ -84,8 +84,8 @@ export const getStaticProps: GetStaticProps<StaticProps> = async (context) => {
 
   const id = toStringId(params.id);
   const draftKey = previewData?.draftKey
-    ? { draftKey: previewData.draftKey }
-    : {};
+    ? <any>{ draftKey: previewData.draftKey }
+    : <any>{};
 
   try {
     const blog = await client.v1.blog._id(id).$get({

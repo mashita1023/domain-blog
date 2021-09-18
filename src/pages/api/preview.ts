@@ -12,7 +12,7 @@ const preview = async (
   }
 
   const id = toStringId(req.query.id);
-  const draftKey =StringId(req.query.draftKey);
+  const draftKey = toStringId(req.query.draftKey);
   const post = await client.v1.blog._id(id).$get({
     query: {
       fields: "id,title,content,publishedAt,tag",
