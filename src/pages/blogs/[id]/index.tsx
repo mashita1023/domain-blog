@@ -33,7 +33,7 @@ const Page: NextPage<PageProps> = (props) => {
       {draftKey && (
         <div>
           現在プレビューモードで閲覧中です。
-          <Link href={`/api/exit-preview>id=${blog.id}`}>
+          <Link href={`/api/exit-preview?id=${blog.id}`}>
             <a>プレビューを解除</a>
           </Link>
         </div>
